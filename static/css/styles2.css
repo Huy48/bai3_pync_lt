@@ -1,0 +1,136 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Times New Roman", Times, serif;
+}
+
+body {
+	background: url('/static/img/background.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+/*h1 {
+	text-align: center;
+	color: black;
+	font-size: 24px;
+	margin-bottom: 20px;
+}*/
+
+h1 {
+	color: #000;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+
+form {
+	width: 50%;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #333;
+}
+
+form input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 16px;
+	display: block;
+	margin: 0 auto;
+}
+
+button:hover {
+	opacity: 0.9;
+}
+
+button.delete {
+	background-color: red;
+}
+
+a button {
+	background-color: #555;
+	color: white;
+	margin-top: 10px;
+}
+
+a button:hover {
+	background-color: #333;
+}
+
+.date-picker-container {
+	position: relative;
+	display: inline-block;
+}
+
+.date-picker-container input[type="date"] {
+	width: 100%;
+	padding: 10px 40px 10px 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+/* Biểu tượng lịch */
+.date-picker-container .icon-calendar {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	background-image: url('static/icons/icons.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	pointer-events: none;
+}
+
+form input {
+	padding: 10px;
+	margin: 5px 0;
+	width: 100%;
+	box-sizing: border-box;
+	border: 2px solid #333;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+form input:focus {
+	outline: nonefoc;
+	border-color: #4CAF50;
+	box-shadow: 0 0 5px #4CAF50;
+}
+

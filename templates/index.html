@@ -1,0 +1,56 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Danh Sách Sinh Viên Tuyển Sinh</title>
+	<link rel = "stylesheet" href="static/css/styles.css">
+</head>
+<body>
+	<h1>Danh Sách Tuyển Sinh, Sinh Viên</h1>
+
+	<a href="{{ url_for('add_student') }}">
+		<button>Thêm Sinh Viên</button>
+	</a>
+	<div class="overlay">
+		<p>Thông tin tuyển sinh: Tổng số sinh viên đã đăng ký là {{ students|length }}.</p>
+	
+
+	<table border="2">
+		<thead>
+			<tr>
+				<th>STT</th>
+				<th>Họ Tên</th>
+				<th>Ngày Sinh</th>
+				<th>Điểm Tổ Hợp</th>
+				<th>Điều kiện</th>
+				<th>Chỉnh Sửa</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for student in students %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ student['HoTen'] }}</td>
+				<td>{{ student['NgaySinh'] }}</td>
+				<td>{{ student['Diem'] }}</td>
+				<td>{{ student['DieuKien'] }}</td>
+				<td>
+					<div class="action-buttons">
+						<form action="{{ url_for('delete_student', rowid=student['rowid']) }}" method="POST">
+							<button type="submit">Xóa</button>
+						</form>
+						<a href="{{ url_for('update_student', rowid=student['rowid']) }}">
+							<button>Cập nhật</button>
+						</a>
+
+					</div>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	</div>
+</body>
+</html>

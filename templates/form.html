@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Thêm/Sửa Sinh Viên</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}">
+
+</head>
+<body>
+	<h1>{% if student %}Cập nhật{% else %}Thêm{% endif %} Sinh Viên</h1>
+	<form action="{{ url_for('update_student', rowid=student['rowid']) if student else url_for('add_student') }}" method="POST">
+		<label for="hoten">Họ Tên:</label>
+		<input type="text" id="hoten" name="hoten" value="{{ student['HoTen'] if student else '' }}" required><br><br>
+		
+		<label for="ngaysinh">Ngày Sinh:</label>
+		<input type="date" id="ngaysinh" name="ngaysinh" value="{{ student['NgaySinh'] if student else '' }}" required><br><br>
+		
+		<label for="diem">Tổ Hợp Điểm:</label>
+		<input type="number" id="diem" name="diem" value="{{ student['Diem'] if student else '' }}" required><br><br>
+		
+		<button type="submit">{% if student %}Cập nhật{% else %}Thêm{% endif %}</button>
+	</form>
+
+	<br>
+	<a href="{{ url_for('index') }}">
+		<button>Quay lại</button>
+	</a>
+
+</body>
+</html>
